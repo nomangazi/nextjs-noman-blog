@@ -1,20 +1,140 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
-const config: Config = {
+const config = {
+  darkMode: ["class"],
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
+  prefix: "",
   theme: {
+    container: {
+      center: true,
+      padding: "2rem"
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      screens: {
+        xs: "425px",
+        sm: "576px",
+        md: "768px",
+        lg: "991px",
+        xl: "1199px",
+        "2xl": "1399px",
+        "3xl": "1599px",
+        "4xl": "1799px",
+        "5xl": "1999px",
+      },
+      spacing: {
+        1.5: "0.375rem",
+        2.5: "0.625rem",
+        3.5: "0.875rem",
+        4.5: "1.125rem",
+        5.5: "1.375rem",
+        6.5: "1.625rem",
+        7.5: "1.875rem",
+        8.5: "2.125rem",
+        11: "2.75rem",
+        12.5: "3.125rem",
+        13: "3.25rem",
+        18: "4.5rem",
+        21: "5.25rem",
+        22: "5.5rem",
+        25: "6.25rem",
+        30: "7.5rem",
+        38: "9.5rem",
+        42: "10.5rem",
+        50: "12.5rem",
+        66: "16.5rem",
+        68: "17rem",
+        76: "19rem",
+        84: "21rem",
+        86: "21.5rem",
+        88: "22rem",
+        90: "22.5rem",
+        92: "23rem",
+        94: "23.5rem",
+        98: "24.5rem",
+        100: "25rem",
+        104: "26rem",
+      },
+      fontFamily: {
+        poppins: "var(--font-poppins)",
+      },
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        primary: {
+          DEFAULT: "var(--primary)",
+          50: "var(--primary-50)",
+          200: "var(--primary-200)",
+          100: "var(--primary-100)",
+          300: "var(--primary-300)",
+          500: "var(--primary-500)",
+          700: "var(--primary-700)",
+          900: "var(--primary-900)",
+        },
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          50: "var(--secondary-50)",
+          100: "var(--secondary-100)",
+          300: "var(--secondary-300)",
+          500: "var(--secondary-500)",
+          700: "var(--secondary-700)",
+        },
+        error: "var(--error)",
+        warning: "var(--warning)",
+        success: "var(--success)",
+        "light-red": "var(--light-red)",
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      borderRadius: {
+        5: "5px",
+        10: "10px",
+        15: "15px",
+        20: "20px",
+        25: "25px",
+        30: "30px",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [],
-};
-export default config;
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config
+
+export default config
