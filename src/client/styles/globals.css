@@ -128,7 +128,9 @@
   .header-section.shadow-bottom {
     box-shadow: 0px 1px 0px 0px rgba(19, 15, 64, 0.10);
   }
+}
 
+@layer components {
   @media (min-width: 425px) {
     .container {
       max-width: 100%;
