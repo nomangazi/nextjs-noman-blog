@@ -1,0 +1,14 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "appliedMigrations": [],
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1720419510592,
+      "tag": "0000_bright_mysterio",
+      "breakpoints": true
+    }
+  ]
+}
