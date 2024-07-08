@@ -9,6 +9,20 @@
       "when": 1720419510592,
       "tag": "0000_bright_mysterio",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1720421024862,
+      "tag": "0001_fast_energizer",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1720421108897,
+      "tag": "0002_busy_santa_claus",
+      "breakpoints": true
     }
   ]
 }

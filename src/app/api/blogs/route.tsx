@@ -10,7 +10,7 @@ export const GET = async () => {
 
         console.log(blogs)
 
-        return NextResponse.json({ "message": "ok" }, { status: 200, statusText: "ok" })
+        return NextResponse.json({ blogs }, { status: 200, statusText: "ok" })
     } catch (ex: any) {
         return NextResponse.json({ "message": ex.message }, { status: 200 })
     }

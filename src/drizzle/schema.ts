@@ -13,7 +13,9 @@ export const user = mysqlTable('user', {
     role: varchar("role", { length: 255 }).notNull().default(""),
     status: varchar("is_active", { length: 255, enum: ['active', 'inactive', 'suspend'] }).notNull().default("active"),
     is_verified: boolean("is_verified").notNull().default(false),
-    time_created: bigint("time_created", { mode: "number" }),
-    time_updated: bigint("time_updated", { mode: "number" }),
-    time_deleted: bigint("time_deleted", { mode: "number" })
+    ip_long: bigint("ip_long", { mode: "number" }).default(0),
+    creator: bigint("creator", { mode: "number" }).default(0),
+    time_created: bigint("time_created", { mode: "number" }).default(0),
+    time_updated: bigint("time_updated", { mode: "number" }).default(0),
+    time_deleted: bigint("time_deleted", { mode: "number" }).default(1),
 })
