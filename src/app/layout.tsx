@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "../client/styles/styles.css";
+import "../client/assets/styles/styles.css";
+import HeaderNavbar from "@/client/components/navbar/header_navbar";
 
 const poppins = Poppins({
   weight: ['400', '500'],
@@ -18,7 +19,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <body className={poppins.variable}>{children}</body>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
+      <body className={poppins.variable}>
+        <HeaderNavbar />
+        {children}
+      </body>
     </html>
   );
 }
