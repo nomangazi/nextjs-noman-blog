@@ -7,7 +7,7 @@ import { NextResponse } from "next/server"
 
 export const GET = async () => {
     try {
-        const blogs = await db.select().from(user).where(eq(user.time_deleted, 1))
+        const blogs = await db.select().from(user).where(eq(user.timeDeleted, 0))
 
         console.log(blogs)
 
