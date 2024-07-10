@@ -4,7 +4,9 @@ import { bigint, boolean, mysqlTable, serial, varchar } from "drizzle-orm/mysql-
 // user table
 export const user = mysqlTable('user', {
     id: serial("id").primaryKey(),
-    full_name: varchar("name", { length: 255 }).notNull().default(""),
+    fullName: varchar("fullName", { length: 255 }).notNull().default(""),
+    firstName: varchar("firstName", { length: 255 }).notNull().default(""),
+    lastName: varchar("lastName", { length: 255 }).notNull().default(""),
     username: varchar("username", { length: 255 }).notNull().unique(),
     email: varchar("email", { length: 255 }).notNull().unique(),
     phone: varchar("phone", { length: 255 }).notNull().unique(),
@@ -12,10 +14,10 @@ export const user = mysqlTable('user', {
     password: varchar("password", { length: 500 }).notNull().default(""),
     role: varchar("role", { length: 255 }).notNull().default(""),
     status: varchar("is_active", { length: 255, enum: ['active', 'inactive', 'suspend'] }).notNull().default("active"),
-    is_verified: boolean("is_verified").notNull().default(false),
-    ip_long: bigint("ip_long", { mode: "number" }).default(0),
+    isVerified: boolean("isVerified").notNull().default(false),
+    ipLong: bigint("ipLong", { mode: "number" }).default(0),
     creator: bigint("creator", { mode: "number" }).default(0),
-    time_created: bigint("time_created", { mode: "number" }).default(0),
-    time_updated: bigint("time_updated", { mode: "number" }).default(0),
-    time_deleted: bigint("time_deleted", { mode: "number" }).default(1),
+    timeCreated: bigint("timeCreated", { mode: "number" }).default(0),
+    timeUpdated: bigint("timeUpdated", { mode: "number" }).default(0),
+    timeDeleted: bigint("timeDeleted", { mode: "number" }).default(1),
 })

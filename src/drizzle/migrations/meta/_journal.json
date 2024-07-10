@@ -23,6 +23,20 @@
       "when": 1720421108897,
       "tag": "0002_busy_santa_claus",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1720603942892,
+      "tag": "0003_black_molecule_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1720604123177,
+      "tag": "0004_medical_nightcrawler",
+      "breakpoints": true
     }
   ]
 }
