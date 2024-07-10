@@ -1,4 +1,4 @@
-import { bigint, boolean, mysqlTable, serial, varchar } from "drizzle-orm/mysql-core";
+import { bigint, boolean, mysqlTable, serial, text, varchar } from "drizzle-orm/mysql-core";
 
 
 // user table
@@ -20,5 +20,19 @@ export const user = mysqlTable('user', {
     creator: bigint("creator", { mode: "number" }).default(0),
     timeCreated: bigint("timeCreated", { mode: "number" }).default(0),
     timeUpdated: bigint("timeUpdated", { mode: "number" }).default(0),
-    timeDeleted: bigint("timeDeleted", { mode: "number" }).default(1),
+    timeDeleted: bigint("timeDeleted", { mode: "number" }).default(0),
+})
+
+// Post table
+export const postTable = mysqlTable('post', {
+    id: serial("id").primaryKey(),
+    authorId: bigint("authorId", { mode: "number" }).default(0),
+    title: text("title").notNull().default(""),
+    content: text("content").notNull().default(""),
+    status: varchar("status", { length: 20, enum: ['active', 'inactive'] }).notNull().default("active"),
+    ipLong: bigint("ipLong", { mode: "number" }).default(0),
+    creator: bigint("creator", { mode: "number" }).default(0),
+    timeCreated: bigint("timeCreated", { mode: "number" }).default(0),
+    timeUpdated: bigint("timeUpdated", { mode: "number" }).default(0),
+    timeDeleted: bigint("timeDeleted", { mode: "number" }).default(0),
 })

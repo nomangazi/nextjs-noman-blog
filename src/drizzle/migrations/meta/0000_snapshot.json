@@ -1,9 +1,104 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "846d19f2-0e92-4574-a4bb-457465cef76a",
+  "id": "f50fac44-1efe-42c2-9673-236f05e0934e",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
+    "post": {
+      "name": "post",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "authorId": {
+          "name": "authorId",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": 0
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "('')"
+        },
+        "content": {
+          "name": "content",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "('')"
+        },
+        "status": {
+          "name": "status",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'active'"
+        },
+        "ipLong": {
+          "name": "ipLong",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": 0
+        },
+        "creator": {
+          "name": "creator",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": 0
+        },
+        "timeCreated": {
+          "name": "timeCreated",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": 0
+        },
+        "timeUpdated": {
+          "name": "timeUpdated",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": 0
+        },
+        "timeDeleted": {
+          "name": "timeDeleted",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": 0
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {
+        "post_id": {
+          "name": "post_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    },
     "user": {
       "name": "user",
       "columns": {
@@ -145,7 +240,7 @@
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false,
-          "default": 1
+          "default": 0
         }
       },
       "indexes": {},

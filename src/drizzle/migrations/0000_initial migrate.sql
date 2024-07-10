@@ -1,3 +1,17 @@
+CREATE TABLE `post` (
+	`id` serial AUTO_INCREMENT NOT NULL,
+	`authorId` bigint DEFAULT 0,
+	`title` text NOT NULL DEFAULT (''),
+	`content` text NOT NULL DEFAULT (''),
+	`status` varchar(20) NOT NULL DEFAULT 'active',
+	`ipLong` bigint DEFAULT 0,
+	`creator` bigint DEFAULT 0,
+	`timeCreated` bigint DEFAULT 0,
+	`timeUpdated` bigint DEFAULT 0,
+	`timeDeleted` bigint DEFAULT 0,
+	CONSTRAINT `post_id` PRIMARY KEY(`id`)
+);
+--> statement-breakpoint
 CREATE TABLE `user` (
 	`id` serial AUTO_INCREMENT NOT NULL,
 	`fullName` varchar(255) NOT NULL DEFAULT '',
@@ -16,7 +30,7 @@ CREATE TABLE `user` (
 	`creator` bigint DEFAULT 0,
 	`timeCreated` bigint DEFAULT 0,
 	`timeUpdated` bigint DEFAULT 0,
-	`timeDeleted` bigint DEFAULT 1,
+	`timeDeleted` bigint DEFAULT 0,
 	CONSTRAINT `user_id` PRIMARY KEY(`id`),
 	CONSTRAINT `user_username_unique` UNIQUE(`username`),
 	CONSTRAINT `user_email_unique` UNIQUE(`email`),
