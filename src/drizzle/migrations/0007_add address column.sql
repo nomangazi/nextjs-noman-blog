@@ -1,0 +1,1 @@
+ALTER TABLE `user` ADD `address` varchar(500) DEFAULT '' NOT NULL;
