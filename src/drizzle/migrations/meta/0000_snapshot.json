@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "eb82508d-bdca-444c-a3a0-bce8de0e912a",
+  "id": "846d19f2-0e92-4574-a4bb-457465cef76a",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "user": {
@@ -14,8 +14,24 @@
           "notNull": true,
           "autoincrement": true
         },
-        "name": {
-          "name": "name",
+        "fullName": {
+          "name": "fullName",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "''"
+        },
+        "firstName": {
+          "name": "firstName",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "''"
+        },
+        "lastName": {
+          "name": "lastName",
           "type": "varchar(255)",
           "primaryKey": false,
           "notNull": true,
@@ -53,7 +69,7 @@
         },
         "password": {
           "name": "password",
-          "type": "varchar(500)",
+          "type": "varchar(255)",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
@@ -61,48 +77,75 @@
         },
         "role": {
           "name": "role",
-          "type": "varchar(255)",
+          "type": "varchar(20)",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
-          "default": "''"
+          "default": "'user'"
         },
-        "is_active": {
-          "name": "is_active",
-          "type": "varchar(255)",
+        "status": {
+          "name": "status",
+          "type": "varchar(20)",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
           "default": "'active'"
         },
-        "is_verified": {
-          "name": "is_verified",
+        "address": {
+          "name": "address",
+          "type": "varchar(500)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "''"
+        },
+        "isVerified": {
+          "name": "isVerified",
           "type": "boolean",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
           "default": false
         },
-        "time_created": {
-          "name": "time_created",
+        "ipLong": {
+          "name": "ipLong",
           "type": "bigint",
           "primaryKey": false,
           "notNull": false,
-          "autoincrement": false
+          "autoincrement": false,
+          "default": 0
         },
-        "time_updated": {
-          "name": "time_updated",
+        "creator": {
+          "name": "creator",
           "type": "bigint",
           "primaryKey": false,
           "notNull": false,
-          "autoincrement": false
+          "autoincrement": false,
+          "default": 0
         },
-        "time_deleted": {
-          "name": "time_deleted",
+        "timeCreated": {
+          "name": "timeCreated",
           "type": "bigint",
           "primaryKey": false,
           "notNull": false,
-          "autoincrement": false
+          "autoincrement": false,
+          "default": 0
+        },
+        "timeUpdated": {
+          "name": "timeUpdated",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": 0
+        },
+        "timeDeleted": {
+          "name": "timeDeleted",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": 1
         }
       },
       "indexes": {},

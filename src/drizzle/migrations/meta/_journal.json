@@ -1,62 +1,12 @@
 {
   "version": "7",
   "dialect": "mysql",
-  "appliedMigrations": [],
   "entries": [
     {
       "idx": 0,
       "version": "5",
-      "when": 1720419510592,
-      "tag": "0000_bright_mysterio",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "5",
-      "when": 1720421024862,
-      "tag": "0001_fast_energizer",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "5",
-      "when": 1720421108897,
-      "tag": "0002_busy_santa_claus",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "5",
-      "when": 1720603942892,
-      "tag": "0003_black_molecule_man",
-      "breakpoints": true
-    },
-    {
-      "idx": 4,
-      "version": "5",
-      "when": 1720604123177,
-      "tag": "0004_medical_nightcrawler",
-      "breakpoints": true
-    },
-    {
-      "idx": 5,
-      "version": "5",
-      "when": 1720604328660,
-      "tag": "0005_perpetual_cardiac",
-      "breakpoints": true
-    },
-    {
-      "idx": 6,
-      "version": "5",
-      "when": 1720604602903,
-      "tag": "0006_add user type",
-      "breakpoints": true
-    },
-    {
-      "idx": 7,
-      "version": "5",
-      "when": 1720604938495,
-      "tag": "0007_add address column",
+      "when": 1720605415672,
+      "tag": "0000_initial commit",
       "breakpoints": true
     }
   ]
